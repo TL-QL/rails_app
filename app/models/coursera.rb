@@ -1,9 +1,10 @@
 class Coursera
     include HTTParty
   
-    #base_uri 'https://www.coursera.org/browse/computer-science'
-    base_uri 'https://api.coursera.org/api/catalog.v1/courses'
-    default_params fields: "smallIcon,shortDescription", q: "search"
+    base_uri 'https://api.coursera.org/api/courses.v1'
+    #base_uri 'https://api.coursera.org/api/catalog.v1/courses'
+    #default_params fields: "smallIcon,shortDescription", q: "search"
+    default_params fields: "courseType, name", q: "search"
     format :json
   
     def self.for term
